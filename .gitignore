@@ -1,0 +1,5 @@
+data/
+checkpoints/
+.vnev/
+best.pt
+best1.pt
