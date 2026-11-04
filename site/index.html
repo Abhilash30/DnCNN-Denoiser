@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CNN Image Denoiser</title>
-<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/ort.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/ort.webgpu.min.js"></script>
 <style>
   :root { color-scheme: light dark; }
   body { font-family: system-ui, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
@@ -50,7 +50,7 @@ const download = document.getElementById("download");
 
 // Load the model once, in the background.
 fileInput.disabled = true;
-const sessionPromise = ort.InferenceSession.create(MODEL_URL, { executionProviders: ["wasm"] });
+const sessionPromise = ort.InferenceSession.create(MODEL_URL, { executionProviders: ["webgpu","wasm"] });
 sessionPromise
   .then(() => {
     statusEl.textContent = "Model ready. Choose an image.";
