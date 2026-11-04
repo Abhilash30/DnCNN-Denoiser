@@ -2,4 +2,9 @@ data/
 checkpoints/
 .vnev/
 best.pt
-best1.pt
+# Cloudflare / Node
+.wrangler/
+node_modules/
+
+# OS
+.DS_Store

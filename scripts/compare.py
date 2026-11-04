@@ -26,7 +26,7 @@ else:
     noisy = img
 
 model = DnCNN()
-model.load_state_dict(torch.load("best1.pt"))
+model.load_state_dict(torch.load("models/best1.pt"))
 model.eval()
 with torch.no_grad():
     denoised = model(torch.from_numpy(noisy[None, None])).clamp(0, 1)[0, 0].numpy()
